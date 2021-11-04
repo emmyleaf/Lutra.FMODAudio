@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Lutra Game Framework - Audio Library - FMOD</Description>
+    <Authors>Emmy Leadley</Authors>
+    <RepositoryUrl>https://github.com/emmyleaf/Lutra.Audio.FMOD</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+    <Platforms>AnyCPU</Platforms>
+    <LangVersion>10.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+</Project>
