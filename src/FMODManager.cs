@@ -17,7 +17,7 @@ namespace Lutra.FMODAudio
         /// but this is not guaranteed.
         /// Visit https://fmod.com/download
         /// </summary>
-        public const string RecommendedNativeLibraryVersion = "2.00.08";
+        public const string RecommendedNativeLibraryVersion = "2.02.03";
 
         private static FMODMode _mode;
 

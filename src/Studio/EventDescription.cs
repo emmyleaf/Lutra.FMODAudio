@@ -149,8 +149,8 @@ namespace Lutra.FMODAudio.Studio
         {
             get
             {
-                Native.getID(out Guid id);
-                return id;
+                Native.getID(out FMOD.GUID id);
+                return id.ToSystemGuid();
             }
         }
 

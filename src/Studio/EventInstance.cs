@@ -219,8 +219,8 @@ namespace Lutra.FMODAudio.Studio
         /// <summary>
         /// Allows the timeline cursor to move past sustain points.
         /// </summary>
-        public void TriggerCue() =>
-            Native.triggerCue();
+        public void KeyOff() =>
+            Native.keyOff();
 
         public void Dispose() =>
             Native.release();
