@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using Lutra.FMODAudio.Studio;
 
 namespace Lutra.FMODAudio
@@ -12,9 +13,8 @@ namespace Lutra.FMODAudio
     public static class FMODManager
     {
         /// <summary>
-        /// This is the FMOD version which was tested on this
-        /// version of the library. Other versions may work, 
-        /// but this is not guaranteed.
+        /// This is the FMOD version which was tested on this version of the library. 
+        /// Other versions may work, but this is not guaranteed.
         /// Visit https://fmod.com/download
         /// </summary>
         public const string RecommendedNativeLibraryVersion = "2.02.03";
@@ -32,7 +32,6 @@ namespace Lutra.FMODAudio
         /// <param name="preInitAction">Executes before initialization, but after the native instance creation.</param>
         public static void Init(
             FMODMode mode,
-            string rootDir,
             int maxChannels = 256,
             uint dspBufferLength = 4,
             int dspBufferCount = 32,
@@ -48,12 +47,12 @@ namespace Lutra.FMODAudio
             _initialized = true;
             _mode = mode;
 
-            FileLoader.RootDirectory = rootDir;
-            NativeLibraryLoader.LoadNativeLibrary("fmod");
+            FMODDllResolver.Register();
+            NativeLibrary.Load("fmod");
 
             if (UsesStudio)
             {
-                NativeLibraryLoader.LoadNativeLibrary("fmodstudio");
+                NativeLibrary.Load("fmodstudio");
 
                 FMOD.Studio.System.create(out StudioSystem.Native);
 
@@ -61,7 +60,7 @@ namespace Lutra.FMODAudio
 
                 preInitAction?.Invoke();
 
-                // This also will init core system. 
+                // This also will init core system.
                 StudioSystem.Native.initialize(maxChannels, studioInitFlags, coreInitFlags, (IntPtr)0);
             }
             else
@@ -75,7 +74,6 @@ namespace Lutra.FMODAudio
 
             // Too high values will cause sound lag.
             CoreSystem.Native.setDSPBufferSize(dspBufferLength, dspBufferCount);
-
         }
 
         public static void Update()
@@ -83,8 +81,7 @@ namespace Lutra.FMODAudio
             CheckInitialized();
             if (UsesStudio)
             {
-                // Studio update updates core system internally.
-                // 2020 design awards winner material right here.
+                // This also will update core system.
                 StudioSystem.Native.update();
             }
             else

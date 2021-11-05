@@ -1,9 +1,12 @@
-﻿using System.Numerics;
+﻿// Based on code from ChaiFoxes.FMODAudio
+// Released under the Mozilla Public License Version 2.0
+
+using System.Numerics;
 
 namespace Lutra.FMODAudio
 {
     /// <summary>
-    /// Various FMOD.VECTOR and Xna.Vector extensions. 
+    /// Extensions for conversion between FMOD.VECTOR and System.Numerics Vectors.
     /// </summary>
     public static class VectorExtensions
     {

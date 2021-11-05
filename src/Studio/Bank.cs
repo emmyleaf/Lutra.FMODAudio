@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Based on code from ChaiFoxes.FMODAudio
+// Released under the Mozilla Public License Version 2.0
+
+using System;
 
 // DO NOT include FMOD namespace in ANY of your classes.
 // Use FMOD.SomeClass instead.

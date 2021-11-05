@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Based on code from ChaiFoxes.FMODAudio
+// Released under the Mozilla Public License Version 2.0
+
+using System;
 
 namespace Lutra.FMODAudio.Studio
 {
@@ -10,18 +13,18 @@ namespace Lutra.FMODAudio.Studio
         public static FMOD.Studio.System Native;
 
         /// <summary>
-        /// Loads bank from file with the default flag.
+        /// Loads bank from a byte array with the default flag.
         /// </summary>
-        public static Bank LoadBank(string name) =>
-            LoadBank(name, FMOD.Studio.LOAD_BANK_FLAGS.NORMAL);
+        public static Bank LoadBank(byte[] buffer) =>
+            LoadBank(buffer, FMOD.Studio.LOAD_BANK_FLAGS.NORMAL);
 
         /// <summary>
-        /// Loads bank from file with custom flags.
+        /// Loads bank from a byte array with custom flags.
         /// </summary>
-        public static Bank LoadBank(string path, FMOD.Studio.LOAD_BANK_FLAGS flags)
+        public static Bank LoadBank(byte[] buffer, FMOD.Studio.LOAD_BANK_FLAGS flags)
         {
             Native.loadBankMemory(
-                FileLoader.LoadFileAsBuffer(path),
+                buffer,
                 flags,
                 out FMOD.Studio.Bank bank
             );

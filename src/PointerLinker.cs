@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Based on code from ChaiFoxes.FMODAudio
+// Released under the Mozilla Public License Version 2.0
+
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
