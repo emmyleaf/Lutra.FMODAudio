@@ -1,5 +1,7 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿// Based on code from ChaiFoxes.FMODAudio
+// Released under the Mozilla Public License Version 2.0
+
+using System;
 using Lutra.FMODAudio.Studio;
 
 namespace Lutra.FMODAudio
@@ -48,11 +50,11 @@ namespace Lutra.FMODAudio
             _mode = mode;
 
             FMODDllResolver.Register();
-            NativeLibrary.Load("fmod");
+            FMODDllResolver.Preload("fmod");
 
             if (UsesStudio)
             {
-                NativeLibrary.Load("fmodstudio");
+                FMODDllResolver.Preload("fmodstudio");
 
                 FMOD.Studio.System.create(out StudioSystem.Native);
 

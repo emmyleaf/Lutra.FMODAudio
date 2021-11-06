@@ -12,6 +12,11 @@ namespace Lutra.FMODAudio
             NativeLibrary.SetDllImportResolver(typeof(FMODManager).Assembly, MapAndLoad);
         }
 
+        internal static void Preload(string libraryName)
+        {
+            MapAndLoad(libraryName, typeof(FMODManager).Assembly, null);
+        }
+
         private static IntPtr MapAndLoad(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
         {
             string mappedName = libraryName;

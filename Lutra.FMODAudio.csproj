@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>Lutra Game Framework - Audio Library - FMOD</Description>
     <Authors>Emmy Leadley</Authors>
-    <RepositoryUrl>https://github.com/emmyleaf/Lutra.Audio.FMOD</RepositoryUrl>
+    <RepositoryUrl>https://github.com/emmyleaf/Lutra.FMODAudio</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <TargetFrameworks>net6.0</TargetFrameworks>
     <Platforms>AnyCPU</Platforms>
