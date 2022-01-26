@@ -1,10 +1,10 @@
 # Lutra Game Framework - Audio Library - FMOD
 
-This library allows you to integrate FMOD audio into a Lutra game.
+This library allows you to integrate FMOD audio into a .NET6 project (such as a Lutra game).
 
 Thankfully, somebody already made a nicer C# FMOD wrapper than the very basic one provided by FMOD: [ChaiFoxes.FMODAudio](https://github.com/Martenfur/ChaiFoxes.FMODAudio).
 The only catch is that it was designed specifically with MonoGame in mind, so this is a fork which removes any MonoGame specific code.
-The FMOD dependency has also been updated to the latest version at time of writing (2.02.03).
+The FMOD dependency was also updated to the latest version as of November 2021 (2.02.03).
 
 Big thanks to the devs of ChaiFoxes.FMODAudio for doing most of the hard work so I didn't have to :)
 
@@ -12,7 +12,7 @@ Big thanks to the devs of ChaiFoxes.FMODAudio for doing most of the hard work so
 
 Initial setup is a little fiddly, since the FMOD native library binaries must be downloaded and installed manually.
 
-At the time of writing, there are no example projects for this library yet.
+Currently, there are no public example projects for this library.
 
 ### Initial Steps
 
